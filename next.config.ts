@@ -8,12 +8,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'recharts'],
+  },
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       handlebars: 'handlebars/dist/handlebars.js',
     };
     
+    if (isServer) {
+      config.externals.push('handlebars');
+    }
+
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
