@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react', 'recharts'],
+    serverComponentsExternalPackages: ['handlebars', 'genkit', '@genkit-ai/googleai', '@genkit-ai/core', 'dotprompt'],
   },
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
