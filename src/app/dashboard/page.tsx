@@ -1,5 +1,4 @@
 import { SummaryWidgets } from "./components/summary-widgets";
-import { AiSummary } from "./components/ai-summary";
 import { RecentActivity } from "./components/recent-activity";
 
 export default function DashboardPage() {
@@ -9,7 +8,6 @@ export default function DashboardPage() {
         <h1 className="font-headline text-3xl font-bold tracking-tight">
           Resumen General
         </h1>
-        <AiSummary />
       </div>
 
       <SummaryWidgets />
